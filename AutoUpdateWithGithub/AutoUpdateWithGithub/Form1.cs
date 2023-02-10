@@ -12,14 +12,14 @@ namespace AutoUpdateWithGithub {
         private void checkUpdate() {
             string urlVersion = "https://raw.githubusercontent.com/EgmTrg/AutoUpdateWithGithub/main/AutoUpdateWithGithub/update/version.txt";
             string newVersion = new WebClient().DownloadString(urlVersion);
-            string currentVersion = Application.ProductVersion.ToString();
+            string version = Application.ProductVersion.ToString();
 
             newVersion = newVersion.Replace(".", "");
-            currentVersion = currentVersion.Replace(".", "");
+            version = version.Replace(".", "");
 
-            if (Convert.ToInt32(newVersion) > Convert.ToInt32(currentVersion)) {
+            if (Convert.ToInt32(newVersion) > Convert.ToInt32(version)) {
                 hasUpdate_label.Text = "Update Mevcut!";
-                updateVersion_label.Text = new WebClient().DownloadString(urlVersion);
+                newVersion_label.Text = new WebClient().DownloadString(urlVersion);
                 button.Enabled = true;
             }
         }
@@ -28,7 +28,7 @@ namespace AutoUpdateWithGithub {
             WebClient web = new WebClient();
             web.DownloadFileCompleted += Web_DownloadFileCompleted;
             web.DownloadFileAsync(
-                new Uri("https://github.com/EgmTrg/AutoUpdateWithGithub/tree/main/AutoUpdateWithGithub/update/update.msi"),
+                new Uri("https://github.com/EgmTrg/AutoUpdateWithGithub/blob/main/AutoUpdateWithGithub/update/update.msi"),
                 "C:\\Users\\eturo\\Downloads\\update.msi"
                 );
         }
@@ -56,6 +56,12 @@ namespace AutoUpdateWithGithub {
 
         private void backgroundWorker1_RunWorkerCompleted(object sender, System.ComponentModel.RunWorkerCompletedEventArgs e) {
             backgroundWorker1.RunWorkerAsync();
+        }
+
+        private void Form1_Load(object sender, EventArgs e) {
+            backgroundWorker1.RunWorkerAsync();
+
+            appVersion_label.Text = Application.ProductVersion.ToString();
         }
     }
 }
