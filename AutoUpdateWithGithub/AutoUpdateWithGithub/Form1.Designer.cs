@@ -30,6 +30,7 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.button = new System.Windows.Forms.Button();
             this.hasUpdate_label = new System.Windows.Forms.Label();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -88,6 +89,7 @@
             // 
             // button
             // 
+            this.button.Enabled = false;
             this.button.Font = new System.Drawing.Font("Consolas", 14.75F);
             this.button.Location = new System.Drawing.Point(7, 148);
             this.button.Name = "button";
@@ -95,16 +97,22 @@
             this.button.TabIndex = 3;
             this.button.Text = "Indir Ve Kur";
             this.button.UseVisualStyleBackColor = true;
+            this.button.Click += new System.EventHandler(this.button_Click);
             // 
             // hasUpdate_label
             // 
             this.hasUpdate_label.AutoSize = true;
             this.hasUpdate_label.Font = new System.Drawing.Font("Consolas", 14.75F);
-            this.hasUpdate_label.Location = new System.Drawing.Point(16, 7);
+            this.hasUpdate_label.Location = new System.Drawing.Point(35, 9);
             this.hasUpdate_label.Name = "hasUpdate_label";
-            this.hasUpdate_label.Size = new System.Drawing.Size(164, 23);
+            this.hasUpdate_label.Size = new System.Drawing.Size(175, 23);
             this.hasUpdate_label.TabIndex = 4;
-            this.hasUpdate_label.Text = "Update Kontrol";
+            this.hasUpdate_label.Text = "Program Guncel!";
+            // 
+            // backgroundWorker1
+            // 
+            this.backgroundWorker1.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker1_DoWork);
+            this.backgroundWorker1.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.backgroundWorker1_RunWorkerCompleted);
             // 
             // Form1
             // 
@@ -132,6 +140,7 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button button;
         private System.Windows.Forms.Label hasUpdate_label;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
     }
 }
 

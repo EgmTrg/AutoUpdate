@@ -5,6 +5,8 @@ VisualStudioVersion = 17.4.33205.214
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoUpdateWithGithub", "AutoUpdateWithGithub\AutoUpdateWithGithub.csproj", "{1E4EB298-A223-4F8A-A7A6-6D41E5BD6149}"
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "AutoUpdate.Installer", "AutoUpdate.Installer\AutoUpdate.Installer.vdproj", "{408249C9-8679-4DA4-8190-D4A63D49118B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,8 @@ Global
 		{1E4EB298-A223-4F8A-A7A6-6D41E5BD6149}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1E4EB298-A223-4F8A-A7A6-6D41E5BD6149}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1E4EB298-A223-4F8A-A7A6-6D41E5BD6149}.Release|Any CPU.Build.0 = Release|Any CPU
+		{408249C9-8679-4DA4-8190-D4A63D49118B}.Debug|Any CPU.ActiveCfg = Debug
+		{408249C9-8679-4DA4-8190-D4A63D49118B}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
