@@ -11,6 +11,7 @@ namespace AutoUpdateWithGithub {
 
         private void checkUpdate() {
             string urlVersion = "https://raw.githubusercontent.com/EgmTrg/AutoUpdateWithGithub/main/AutoUpdateWithGithub/update/version.txt";
+            //string urlvssssss = "https://raw.githubusercontent.com/EgmTrg/AutoUpdateWithGithub/main/AutoUpdateWithGithub/update/version.txt";
             string newVersion = new WebClient().DownloadString(urlVersion);
             string version = Application.ProductVersion.ToString();
 
